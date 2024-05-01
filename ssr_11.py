@@ -2,6 +2,7 @@ import RPi.GPIO as GPIO
 from time import sleep
 import time
 import sys
+import os
 
 ssr_pin = 11
 GPIO.setwarnings(False)
@@ -19,7 +20,8 @@ while True:
     print("find go11.txt\n")
   else:
     print("stop this proram")
-    GPIO.output(ssr_pin11, False)
+    GPIO.output(ssr_pin, False)
+    exit()
   GPIO.output(ssr_pin, True)
   print("SSR 11 ON ("+str(ont)+"sec)\n")
   time.sleep(ont)

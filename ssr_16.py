@@ -2,6 +2,7 @@ import RPi.GPIO as GPIO
 from time import sleep
 import time
 import sys
+import os
 
 ssr_pin = 16
 GPIO.setwarnings(False)
@@ -20,6 +21,7 @@ while True:
   else:
     print("stop this proram")
     GPIO.output(ssr_pin, False)
+    exit()
   GPIO.output(ssr_pin, True)
   print("SSR 16 ON ("+str(ont)+"sec)\n")
   time.sleep(ont)
