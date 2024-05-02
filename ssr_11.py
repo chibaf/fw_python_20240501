@@ -19,7 +19,7 @@ while True:
   if is_file:
     print("find go11.txt\n")
   else:
-    print("stop this proram")
+    print("stop ssr_11 proram")
     GPIO.output(ssr_pin, False)
     exit()
   GPIO.output(ssr_pin, True)
