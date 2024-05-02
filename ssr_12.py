@@ -38,11 +38,12 @@ while True:
     s1=d+": ssr_12 "+str(ont)+" "+str(offt)+" stops\n"
     f.write(s1)
     f.close()
-    GPIO.output(ssr_pin, False)
+    GPIO.output(ssr_pin, 0)
     exit()
-  GPIO.output(ssr_pin, True)
+  GPIO.output(ssr_pin, 1)
   print("SSR 12 ON ("+str(ont)+"sec)\n")
   time.sleep(ont)
-  GPIO.output(ssr_pin, False)
-  print("SSR 12 OFF ("+str(offt)+"sec)\n")
-  time.sleep(offt)
+  if offt != 0.0:
+    GPIO.output(ssr_pin, 0)
+    print("SSR 12 OFF ("+str(offt)+"sec)\n")
+    time.sleep(offt)
